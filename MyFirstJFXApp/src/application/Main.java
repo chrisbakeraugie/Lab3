@@ -6,12 +6,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import org.opencv.imgproc.Imgproc;
 
 
 public class Main extends Application {
 	
-	private BorderPane rootElement;
+	private AnchorPane rootElement;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -19,9 +21,9 @@ public class Main extends Application {
 		
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("FirstFXML.fxml"));
-			this.rootElement = (BorderPane) loader.load();
+			this.rootElement = (AnchorPane) loader.load();
 			
-			Scene scene = new Scene(this.rootElement,400,400);
+			Scene scene = new Scene(this.rootElement,700,700);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("JavaFX Meets Tons of Bugs");
 			primaryStage.setScene(scene);
@@ -37,7 +39,7 @@ public class Main extends Application {
 		
 	}
 	
-	public BorderPane getRootElement() {
+	public AnchorPane getRootElement() {
 		return this.rootElement;
 	}
 	
